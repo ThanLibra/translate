@@ -20,9 +20,9 @@ public class LoadScene {
     }
 
     public void index() throws Exception{
-        Parent home = FXMLLoader.load(getClass().getResource("../main/main.fxml"));
+        Parent home = FXMLLoader.load(getClass().getResource("main.fxml"));
         Global.SCENE_HOME = new Scene(home, 715, 557);
-        Global.SCENE_HOME.getStylesheets().add(getClass().getResource("../main/main.css").toExternalForm());
+        Global.SCENE_HOME.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
         Global.WINDOWN.setScene(Global.SCENE_LOGIN);
     }
 
