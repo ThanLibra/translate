@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.HomeController">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="556.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controllers.HomeController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Search" />
-          <Menu mnemonicParsing="false" text="Create" />
-          <Menu mnemonicParsing="false" text="Help" />
+          <Menu fx:id="menu" mnemonicParsing="false" text="Menu">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#splitFile" text="Reset data" />
+                  <MenuItem mnemonicParsing="false" onAction="#loadCreateScene" text="Create" />
+               </items></Menu>
         </menus>
       </MenuBar>
    </top>
@@ -37,15 +40,7 @@
             </FlowPane>
             <FlowPane prefHeight="502.0" prefWidth="200.0">
                <children>
-                  <ScrollPane prefHeight="501.0" prefWidth="200.0">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="496.0" prefWidth="200.0">
-                           <children>
-                              <VBox prefHeight="474.0" prefWidth="184.0" />
-                           </children>
-                        </AnchorPane>
-                    </content>
-                  </ScrollPane>
+                  <ListView fx:id="suggestWords" prefHeight="495.0" prefWidth="200.0" />
                </children>
             </FlowPane>
          </children>

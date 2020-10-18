@@ -8,21 +8,25 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import main.controllers.HomeController;
-import main.controllers.LoginController;
 
-public class LoadScene {
+public class DictionaryApplication {
 
-    private LoginController loginController;
     private HomeController homeController;
 
-    public LoadScene(){
+    public DictionaryApplication(){
         loadLoginScene();
     }
 
-    public void index() throws Exception{
+    public void runApplication() throws Exception{
+        //Home scene
         Parent home = FXMLLoader.load(getClass().getResource("main.fxml"));
         Global.SCENE_HOME = new Scene(home, 715, 557);
         Global.SCENE_HOME.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
+
+        //Create scene
+        Parent create = FXMLLoader.load(getClass().getResource("create.fxml"));
+        Global.SCENE_CREATE = new Scene(create, 714, 556);
+
         Global.WINDOWN.setScene(Global.SCENE_LOGIN);
     }
 
